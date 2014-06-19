@@ -4,10 +4,26 @@
 <title>Escape</title>
 </head>
 <body>
-{{username|e}}
+<h2>escape</h2>
+{{ username|e }}
 {# is equivalent to #}
-{{username|e('html')}}
+{{ username|e('html') }}
 
+<h2>raw</h2>
+{% autoescape %}
+{{ username|raw }} {# var won't be escaped #}
+{% endautoescape %}
+
+<h2>json_encode</h2>
+{{ data|json_encode() }}
+
+<h2>nl2br</h2>
+{{ "I like Twig.\nYou will like it too."|nl2br }}
+
+<h2>url_encode</h2>
+{{ "path-seg*ment"|url_encode }}
+{{ "string with spaces"|url_encode(true) }}
+{{ {'param': 'value', 'foo': 'bar'}|url_encode }}
 </body>
 </html>
 

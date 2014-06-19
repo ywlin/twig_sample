@@ -10,9 +10,15 @@ $twig = new Twig_Environment(
     )
 );
 $name = "Caroline  & \" \' < >";
+$data = array(
+    "Monday" => "1",
+    "Tuesday" => "2",
+    "Wednesday" => "3",
+);
 
 $template = $twig->loadTemplate('escape.html');
 
 echo $template->render(array(
-   'username' => $name, 
+    'username' => $name, 
+    'data' => $data,
 ));
