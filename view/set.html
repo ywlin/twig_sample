@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+    <h2>Tags: set</h2>
+    <h3>Shows the guys whos gener is male<h3>
+
+    {% set gen = "male" %}
+    {% for member in members %}
+        {% if gen == member.gender %}
+            <li>
+                NAME: <font color="blue">{{ member.name }}</font>
+                &nbsp;&nbsp;
+                GENDER: <font color="green">{{ member.gender }}</font>
+            </li>
+        {% endif %}
+    {% endfor %}
+
+    </body>
+</html>
